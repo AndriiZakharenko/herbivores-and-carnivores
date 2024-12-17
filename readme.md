@@ -1,55 +1,28 @@
 # Herbivores and Сarnivores
 
-**Read [the guideline](https://github.com/mate-academy/js_task-guideline/blob/master/README.md) before start**
-
-# Task description:
+### Description
 
 Nature is well suited to reflect the principles of Object Oriented Programming.
 All instances of the `Animal` class must have properties `health` and a `name`.
 Health is `100` by default.
 
-Create a `Herbivore` class.
+Created a `Herbivore` class.
 Herbivore has a method of `hide`, which sets the `hidden` property of the beast to the value of `true`, and helps to hide from carnivores.
 
-Create a `Сarnivore` class.
+Created a `Сarnivore` class.
 Carnivore has a `bite` method, which takes a herbivore object and decreases the object's health by `50`. The method does not work if it is another сarnivore, or the herbivore is currently hiding.
 
-`Herbivore` and `Сarnivore` should extend an `Animal` class.
+`Herbivore` and `Сarnivore` extend an `Animal` class.
 
-All alive animals should be in the static `Animal.alive` array.
-If the health of the animal becomes less than or equal to `0`, the beast dies and it should be removed from the static array `Animals.alive`.
+All alive animals are in the static `Animal.alive` array.
+If the health of the animal becomes less than or equal to `0`, the beast dies and it is removed from the static array `Animals.alive`.
+  
+### Stack
 
-Example:
-```js
-const deer = new Herbivore('Bembi');
-const panther = new Carnivore('Bagira');
-const lion = new Carnivore('King');
-const rabbit = new Herbivore('Max');
+- JS
 
-Animal.alive === [
-  {name: 'Bembi', health: 100, hidden: false},
-  {name: 'Bagira', health: 100},
-  {name: 'King', health: 100},
-  {name: 'Max', health: 100, hidden: false},
-];
+### Tools
 
-lion.bite(deer);
-panther.bite(lion);
-
-Animal.alive === [
-  {name: 'Bembi', health: 50},
-  {name: 'Bagira', health: 100},
-  {name: 'King', health: 100},
-  {name: 'Max', health: 100},
-];
-
-panther.bite(deer);
-rabbit.hide();
-panther.bite(rabbit);
-
-Animal.alive === [
-  {name: 'Bagira', health: 100},
-  {name: 'King', health: 100},
-  {name: 'Max', health: 100, hidden: true},
-];
-```
+- ESlint
+- Prettier
+- Jest
